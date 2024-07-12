@@ -40,7 +40,7 @@ export const playerSlice = createSlice({
       state.currentLessonIndex = action.payload[1]
     },
 
-    next: (state) => {
+    next: (state) => { // Não precisa de payload (action). Por isso ao tirar ele entende lá no Video.tsx que não precisa colocar nada dentro da chamada do next()
       const nextLessonIndex = state.currentLessonIndex + 1
       const nextLesson = state.course.modules[state.currentModuleIndex].lessons[nextLessonIndex]
       // Se ainda houver próximas lições no módulo (não faz sentido o next quando é a última no array):
